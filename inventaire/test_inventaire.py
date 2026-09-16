@@ -1,4 +1,4 @@
-from inventaire import val
+from inventaire import val, alerte
 
 
 def test_val_comportement_actuel():
@@ -11,3 +11,17 @@ def test_val_comportement_actuel():
     ]
 
     assert val(articles) == 79.0
+
+
+def test_alerte_comportement_actuel():
+    articles = [
+        {"ref": "A1", "q": 2, "seuil": 5},
+        {
+            "ref": "A2",
+            "q": 5,
+            "seuil": 5,
+        },
+        {"ref": "A3", "q": 10, "seuil": 5},
+    ]
+
+    assert alerte(articles) == ["A1"]
