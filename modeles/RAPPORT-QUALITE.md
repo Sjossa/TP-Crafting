@@ -91,9 +91,7 @@ Rempli pendant la mission 3, sans rien corriger.
 
 | Règle | Ligne | Ce que le code fait | Ce que la règle dit |
 | ----- | ----- | ------------------- | ------------------- |
-|       |       |                     |                     |
-
----
+| M1    | L 1-8 (fonction `val`) | Ignore les articles dont la quantité est négative ou nulle (`if a["q"] > 0`) et ajoute 0. | La valeur du stock est la somme des quantités multipliées par les prix unitaires, sans les ignorer arbitrairement. |
 
 ## 5. Tableau de bord après refactoring
 
