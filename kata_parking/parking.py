@@ -1,11 +1,16 @@
 import math
 
 
-def calculer_prix(minutes, abonnee=False):
-    if minutes <= 30:
+def calculer_prix(minutes, abonnee=False, estElectrique=False):
+
+    temps_gratuit = 30
+
+    if estElectrique:
+        temps_gratuit = 60
+    if minutes <= temps_gratuit:
         return 0
 
-    temps_depasse = minutes - 30
+    temps_depasse = minutes - temps_gratuit
 
     temps_suplementaire = temps_depasse / 30
     calcul_tranche_30_minutes_depasser = math.ceil(temps_suplementaire)
