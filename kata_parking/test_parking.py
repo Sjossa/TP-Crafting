@@ -13,3 +13,7 @@ def test_facturation_au_dela_de_30_minutes():
 def test_facturation_pour_chaque_24h():
     assert calculer_prix(480) == 18
     assert calculer_prix(1440) == 18
+
+
+def test_facturation_camion_perte_60_pourcent():
+    assert calculer_prix(31, True) == 0.90
