@@ -12,4 +12,8 @@ def calculer_prix(minutes):
 
     calcul_ajout_de_facturation = calcul_tranche_de_30_minutes_depasserr * 1.50
 
-    return calcul_ajout_de_facturation
+    calcul_nombre_de_jour = math.ceil(minutes / 1440)
+
+    plafond_nombre_de_jour = calcul_nombre_de_jour * 18
+
+    return min(calcul_ajout_de_facturation, plafond_nombre_de_jour)
