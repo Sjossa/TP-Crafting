@@ -27,5 +27,9 @@ def test_facturation_camion_electrique_abonne():
 
 def test_exemple_erreur():
 
-    with pytest.raises(ValueError, match="Le message d'erreur que tu attends"):
+    with pytest.raises(ValueError, match="Erreur durée negative"):
         calculer_prix(-5)
+
+
+def test_consequence_72H_vehicule():
+    assert calculer_prix(4320) == 250
