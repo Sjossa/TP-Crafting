@@ -1,3 +1,5 @@
+import pytest
+
 from parking import calculer_prix
 
 
@@ -21,3 +23,9 @@ def test_facturation_camion_perte_60_pourcent():
 
 def test_facturation_camion_electrique_abonne():
     assert calculer_prix(60, True, True) == 0
+
+
+def test_exemple_erreur():
+
+    with pytest.raises(ValueError, match="Le message d'erreur que tu attends"):
+        calculer_prix(-5)
