@@ -3,6 +3,9 @@ import math
 
 def calculer_prix(minutes, abonnee=False, estElectrique=False):
 
+    if minutes < 0:
+        raise ValueError("Erreur durée negative")
+
     temps_gratuit = 30
 
     if estElectrique:
