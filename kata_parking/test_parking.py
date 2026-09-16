@@ -1,6 +1,9 @@
-import pytest
+from datetime import datetime
 
 from parking import calculer_prix
+
+
+import pytest
 
 
 def test_un_stationnement_de_30_minutes_est_gratuit():
@@ -33,3 +36,10 @@ def test_exemple_erreur():
 
 def test_consequence_72H_vehicule():
     assert calculer_prix(4320) == 250
+
+
+def test_facturation_avec_dates_actuelles():
+    heure_entree = datetime(2035, 1, 1, 10, 0)
+    heure_actuelle = datetime(2035, 1, 1, 11, 30)
+
+    assert calculer_prix(heure_entree, heure_actuelle) == 3.0
