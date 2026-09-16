@@ -17,3 +17,7 @@ def test_facturation_pour_chaque_24h():
 
 def test_facturation_camion_perte_60_pourcent():
     assert calculer_prix(31, True) == 0.90
+
+
+def test_facturation_camion_electrique_abonne():
+    assert calculer_prix(60, True, True) == 0
