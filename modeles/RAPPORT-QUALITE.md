@@ -89,10 +89,11 @@ Au lieu de tout casser, on va utiliser une approche progressive. Le plan d'attaq
 
 Rempli pendant la mission 3, sans rien corriger.
 
-| Règle | Ligne                  | Ce que le code fait                                                                       | Ce que la règle dit                                                                                                |
-| ----- | ---------------------- | ----------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
-| M1    | L 1-8 (fonction `val`) | Ignore les articles dont la quantité est négative ou nulle (`if a["q"] > 0`) et ajoute 0. | La valeur du stock est la somme des quantités multipliées par les prix unitaires, sans les ignorer arbitrairement. |
-| M2    | L 29-34                | Vérifie si q < seuil (strict) et ignore le cas où la quantité est égale au seuil.         | L'article est aussi en alerte lorsque sa quantité est égale au seuil (<=).                                         |
+| Règle | Ligne                  | Ce que le code fait                                                                                                       | Ce que la règle dit                                                                                                |
+| ----- | ---------------------- | ------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| M1    | L 1-8 (fonction `val`) | Ignore les articles dont la quantité est négative ou nulle (`if a["q"] > 0`) et ajoute 0.                                 | La valeur du stock est la somme des quantités multipliées par les prix unitaires, sans les ignorer arbitrairement. |
+| M2    | L 29-34                | Vérifie si q < seuil (strict) et ignore le cas où la quantité est égale au seuil.                                         | L'article est aussi en alerte lorsque sa quantité est égale au seuil (<=).                                         |
+| M3    | L 37-59                | Modifie le stock en négatif avant de vérifier s'il est insuffisant, modifiant la quantité malgré le refus (return False). | Le mouvement est refusé et le stock reste inchangé.|
 
 ## 5. Tableau de bord après refactoring
 

@@ -1,4 +1,4 @@
-from inventaire import val, alerte
+from inventaire import val, alerte, mouv
 
 
 def test_val_comportement_actuel():
@@ -25,3 +25,13 @@ def test_alerte_comportement_actuel():
     ]
 
     assert alerte(articles) == ["A1"]
+
+
+def test_mouv_stock_insuffisant_comportement_actuel():
+    article = {"ref": "ART-01", "q": 5}
+
+    resultat = mouv(article, q=10, t="out")
+
+    assert resultat is False
+
+    assert article["q"] == -5
