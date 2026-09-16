@@ -1,7 +1,18 @@
+from datetime import datetime
 import math
 
 
-def calculer_prix(minutes, abonnee=False, estElectrique=False):
+def calculer_prix(
+    minutes_ou_entree, abonnee=False, estElectrique=False, heure_actuelle=None
+):
+
+    if isinstance(minutes_ou_entree, datetime):
+        if heure_actuelle is None:
+            heure_actuelle = datetime.now()
+        difference = heure_actuelle - minutes_ou_entree
+        minutes = int(difference.total_seconds() / 60)
+    else:
+        minutes = minutes_ou_entree
 
     if minutes < 0:
         raise ValueError("Erreur durée negative")

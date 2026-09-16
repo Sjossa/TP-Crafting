@@ -42,4 +42,4 @@ def test_facturation_avec_dates_actuelles():
     heure_entree = datetime(2035, 1, 1, 10, 0)
     heure_actuelle = datetime(2035, 1, 1, 11, 30)
 
-    assert calculer_prix(heure_entree, heure_actuelle) == 3.0
+    assert calculer_prix(heure_entree, heure_actuelle=heure_actuelle) == 3.0
