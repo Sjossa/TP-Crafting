@@ -1,4 +1,4 @@
-from inventaire import val, alerte, mouv
+from inventaire import val, alerte, mouv, cout
 
 
 def test_val_comportement_actuel():
@@ -35,3 +35,9 @@ def test_mouv_stock_insuffisant_comportement_actuel():
     assert resultat is False
 
     assert article["q"] == -5
+
+
+def test_cout_stock():
+    article = {"ref": "ART-01", "q": 2, "seuil": 2, "pu": 10}
+
+    assert cout(article) == 50

@@ -93,7 +93,8 @@ Rempli pendant la mission 3, sans rien corriger.
 | ----- | ---------------------- | ------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
 | M1    | L 1-8 (fonction `val`) | Ignore les articles dont la quantité est négative ou nulle (`if a["q"] > 0`) et ajoute 0.                                 | La valeur du stock est la somme des quantités multipliées par les prix unitaires, sans les ignorer arbitrairement. |
 | M2    | L 29-34                | Vérifie si q < seuil (strict) et ignore le cas où la quantité est égale au seuil.                                         | L'article est aussi en alerte lorsque sa quantité est égale au seuil (<=).                                         |
-| M3    | L 37-59                | Modifie le stock en négatif avant de vérifier s'il est insuffisant, modifiant la quantité malgré le refus (return False). | Le mouvement est refusé et le stock reste inchangé.|
+| M3    | L 37-59                | Modifie le stock en négatif avant de vérifier s'il est insuffisant, modifiant la quantité malgré le refus (return False). | Le mouvement est refusé et le stock reste inchangé.                                                                |
+| M5    | L 62-71                | Calcule le coût avec la variable globale Q (100) et la remise R (0.1).                                                    | Applique une remise de 10 % à partir de 100 unités commandées, 100 incluses.                                       |
 
 ## 5. Tableau de bord après refactoring
 
