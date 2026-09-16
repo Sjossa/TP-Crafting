@@ -1,4 +1,4 @@
-from inventaire import val, alerte, mouv, cout
+from inventaire import val, alerte, mouv, cout, classer
 
 
 def test_val_comportement_actuel():
@@ -41,3 +41,20 @@ def test_cout_stock():
     article = {"ref": "ART-01", "q": 2, "seuil": 2, "pu": 10}
 
     assert cout(article) == 50
+
+
+def test_classer_stock():
+
+    article = [
+        {"ref": "A1", "q": 2, "pu": 5},
+        {
+            "ref": "A2",
+            "q": 5,
+            "pu": 5,
+        },
+        {"ref": "A3", "q": 10, "pu": 5},
+    ]
+
+    resultat = classer(article)
+
+    assert resultat[0]["ref"] == "A3"
