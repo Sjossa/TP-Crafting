@@ -29,4 +29,7 @@ def calculer_prix(minutes, abonnee=False, estElectrique=False):
     if abonnee:
         prix_final = prix_final * 0.60
 
+    if minutes >= 4320:
+        prix_final = 250
+
     return round(prix_final, 2)
