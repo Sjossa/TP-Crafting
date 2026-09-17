@@ -1,4 +1,15 @@
-from inventaire import val, alerte, mouv, cout, classer, rot, par_cat, rapport
+from inventaire import (
+    val,
+    alerte,
+    mouv,
+    cout,
+    classer,
+    rot,
+    par_cat,
+    rapport,
+    maj_prix,
+    export_json,
+)
 
 
 def test_val_comportement_actuel():
@@ -93,3 +104,17 @@ def test_rapport():
     assert res["valeur"] == 70.0
     assert res["nb"] == 2
     assert "A1" in res["alertes"]
+
+
+def test_maj_prix():
+    assert maj_prix("A1", 15) is None
+
+
+def test_export_json(tmp_path):
+
+    d = tmp_path / "inv.json"
+    res = {"valeur": 70.0, "nb": 2}
+
+    hist = export_json(res, chemin=str(d))
+    assert len(hist) == 1
+    assert hist[0]["valeur"] == 70.0
