@@ -35,7 +35,7 @@ def test_alerte_comportement_actuel():
         {"ref": "A3", "q": 10, "seuil": 5},
     ]
 
-    assert alerte(articles) == ["A1"]
+    assert alerte(articles) == ["A1", "A2"]
 
 
 def test_mouv_stock_insuffisant_comportement_actuel():

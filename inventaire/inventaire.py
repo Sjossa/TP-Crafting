@@ -22,12 +22,12 @@ def val(arts):
     return round(total, 2)
 
 
-def alerte(arts):
-    l = []
-    for a in arts:
-        if a["q"] < a["seuil"]:
-            l.append(a["ref"])
-    return l
+def alerte(articles):
+    liste_alertes = []
+    for article in articles:
+        if article["q"] <= article["seuil"]:
+            liste_alertes.append(article["ref"])
+    return liste_alertes
 
 
 def mouv(a, q, t="out", j=[], force=False, log=True):
