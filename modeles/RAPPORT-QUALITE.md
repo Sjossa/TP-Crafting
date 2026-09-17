@@ -96,7 +96,8 @@ Rempli pendant la mission 3, sans rien corriger.
 | M3    | L 37-59                | Modifie le stock en négatif avant de vérifier s'il est insuffisant, modifiant la quantité malgré le refus (return False). | Le mouvement est refusé et le stock reste inchangé.                                                                |
 | M5    | L 62-71                | Calcule le coût avec la variable globale Q (100) et la remise R (0.1).                                                    | Applique une remise de 10 % à partir de 100 unités commandées, 100 incluses.                                       |
 | M6    | L 74-84                | Trie les articles selon leur valeur (quantité × prix unitaire) par ordre décroissant via un tri à bulles.                 | Le classement par valeur trie les articles par valeur de stock décroissante.                                       |
-
+| M7    | L 87-91                | Utilise try...except pour étouffer l'erreur de division par zéro (quand v=0) et renvoie 0                                 | La fonction doit lever une erreur explicite si aucune vente n'a eu lieu, plutôt que de renvoyer une valeur.        |
+| M8 |  | Ventile et additionne les valeurs de stock selon un ensemble de catégories fixes (`outil`, `consommable`, `piece`, le reste basculant en `autre`). | La ventilation doit s'adapter dynamiquement aux catégories présentes dans l'inventaire. |
 ## 5. Tableau de bord après refactoring
 
 Mêmes mesures, mêmes commandes qu'en partie 1.
