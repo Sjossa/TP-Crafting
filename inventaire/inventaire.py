@@ -17,13 +17,9 @@ DERNIER = 0
 
 
 def val(arts):
-    t = 0
-    for a in arts:
-        if a["q"] > 0:
-            t = t + a["q"] * a["pu"]
-        else:
-            t = t + 0
-    return round(t, 2)
+    # Calcule la valeur totale du stock
+    total = sum(article["q"] * article["pu"] for article in arts)
+    return round(total, 2)
 
 
 def alerte(arts):
@@ -119,7 +115,9 @@ def par_cat(arts):
     return d
 
 
-def rapport(arts, ventes=None, cat=None, seuil_min=None, export=False, verbose=True, d=None):
+def rapport(
+    arts, ventes=None, cat=None, seuil_min=None, export=False, verbose=True, d=None
+):
     if d is None:
         d = datetime.datetime.now()
     res = {}

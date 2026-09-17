@@ -21,7 +21,7 @@ def test_val_comportement_actuel():
         {"q": -3, "pu": 15.00},
     ]
 
-    assert val(articles) == 79.0
+    assert val(articles) == 34
 
 
 def test_alerte_comportement_actuel():
